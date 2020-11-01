@@ -12,6 +12,40 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+@media screen and (max-width: 600px) {
+  .butn{
+    margin-top: 0em !important;
+     width: 4em !important;
+     height: 2em !important;
+     margin-bottom: .5em;
+     margin-left:3em;
+     float:right;
+  }
+  .navi{
+    width:100% !important;
+  }
+  .formone{
+    align-self:center !important;
+    margin-left:.1em !important;
+    margin-right: .1em !important;
+  }
+.company1
+{
+  display: inline-block;
+  border-radius: 20cm;
+  border-color: #00ADED;
+  margin-left:.1em !important;
+  height: 2em;
+  font-size: small;
+  width: 15em !important;
+  text-align: left;
+  margin-top: 0 em;
+  box-shadow: 0px 0px 10px #00ADED;
+  border-radius: .6cm;
+
+}
+  
+}
 
 .App-header {
   background-color: #282c34;
@@ -38,19 +72,27 @@
 }
 .navi
 {
-  background-color:#32CD32;
+  background-color:#17D059;
   color:white;
-  padding: 10px;
-  
+  padding: .3em;
+  margin-right: 0em;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  margin-right: 0em;
+}
+nav
+{
+  width:100% !important;
 }
 .rgt
 {
   float: right;
-  margin-right: 20px;
+  margin-right: 3em;
+  
 }
 .singlel
 {
-  display:inline-block;
+  display:flex;
   margin-left: 1em;
   margin-top: .2em;
  
@@ -59,11 +101,53 @@
 {
   display: inline-block;
   border-radius: 20cm;
-  border-color: #33A1DE;
-  margin-left:2em;
+  border-color: #00ADED;
+  margin-left:0.8em;
   height: 26px;
   font-size: small;
   width: 200px;
+  text-align: left;
+  margin-top: 1em;
+  margin-right: 1em;
+
+}
+.company1
+{
+  display: inline-block;
+  border-radius: 20cm;
+  border-color: #00ADED;
+  margin-left:2em;
+  height: 26px;
+  font-size: small;
+  width: 320px;
+  text-align: left;
+  margin-top: 0 em;
+  box-shadow: 0px 0px 10px #00ADED;
+  border-radius: .6cm;
+
+}
+.company3
+{
+  display: inline-block;
+  border-radius: .4cm;
+  border-color: #00ADED;
+  margin-left:.3em;
+  height: 26px;
+  font-size: small;
+  width: 39px;
+  text-align: left;
+  margin-top: 1em;
+
+}
+.company5
+{
+  display: inline-block;
+  border-radius: .4cm;
+  border-color: #00ADED;
+  margin-left:.001em;
+  height: 26px;
+  font-size: small;
+  width: 39px;
   text-align: left;
   margin-top: 1em;
 
@@ -71,15 +155,18 @@
 .butn
 {
   display:inline;
-  margin-left: 70em;
-  background-color:#33A1DE ;
+  background-color:#00ADED ;
   color:white;
-  
- 
+  margin-top: .1em;
+  width: 7em;
+  height:3em;
+  margin-right: 2.2em;
+   
+   
 }
 .formtitle
 {
-  background-color: #33A1DE;
+  background-color: #00ADED;
   color:white;
   text-align: center;
   font-size: large;
@@ -92,8 +179,8 @@
   margin-left: 2em;
   margin-top: 1.5em;
   background-color:white;
-  box-shadow: 0px 0px 10px #33A1DE;
-  height:460px;
+  box-shadow: 0px 0px 10px #00ADED;
+  height:550px;
   width:380px;
   border-radius:6px 6px 0px 0px;
 }
@@ -101,13 +188,14 @@
 .allform
 {
   display: inline;
+  margin-top:0%;
   
 }
 .broadinput
 {
   display: inline-block;
   border-radius:10px 10px 10px 10px;
-  border-color: #33A1DE;
+  border-color: #00ADED;
   margin-left: 1em;
   height: 50px;
   font-size: small;
@@ -120,25 +208,33 @@
 {
   display: inline-block;
   border-radius: 20cm;
-  border-color: #33A1DE;
-  margin-left: 1em;
+  border-color: #00ADED;
+  margin-left: .4em;
   height: 26px;
   font-size: small;
-  width: 75px;
+  width: 99px;
   text-align: center;
   margin-top: 1em;
-
- 
-  
 }
 footer
 {
-  background-color: #33A1DE;
+  background-color: #00ADED;
   height: 1em;
 }
 .rbtn
 {
-  border-color: #33A1DE;
+  border-color:#00ADED;
+  margin-left: 1em;
+  float:left;
+ 
+  
+}
+.rbtn1
+{
+  border-color:#00ADED;
+  margin-left: 1.5em !important
+  ;
+  float:left;
   
 }
 label
@@ -152,7 +248,7 @@ label
   margin-right: 2em;
   display: inline-block;
   border-radius: 20cm;
-  border-color: #33A1DE;
+  border-color: #00ADED;
   margin-left:2em;
   height: 26px;
   font-size: small;
@@ -167,3 +263,148 @@ label
   height:.5em;
 
 }
+.last
+{
+  margin-left:1em;
+  float:left;
+}
+.contact
+{
+  height:1.5em;
+  width:1.5em;
+}
+label{
+  float:left;
+  margin-left:.4em;
+  margin-top: 1em;
+}
+.company2
+{
+  display: inline-block;
+  border-radius: 20cm;
+  border-color: #00ADED;
+  margin-left:0.2em;
+  height: 26px;
+  font-size: small;
+  width: 155px;
+  text-align: left;
+  margin-top: 1em;
+}
+.company4
+{
+  display: inline-block;
+  border-radius: 20cm;
+  border-color: #00ADED;
+  margin-left:0.2em;
+  height: 26px;
+  font-size: small;
+  width: 145px;
+  text-align: left;
+  margin-top: 1em;
+}
+
+.addimg
+{
+  margin-top:1em;
+}
+.redv
+{
+  color:red;
+}
+.inp
+{
+  margin-top:1.5em;
+  
+}
+radio
+{
+  border-color: #00ADED;
+}
+.navbar {
+  display: flex;
+  position: relative;
+  color: white !important;
+  background-color: #17d059; /*green*/
+  height: 2em;
+  /* padding-top: 10px; */
+  padding-top: 0.3%;
+  padding-left: 1.75%;
+  left: 0;
+  top: 0;
+  position: fixed;
+  z-index: 100;
+  width: 100% !important;
+}
+
+.navbar_left {
+  display: flex;
+}
+.navbar_left > img {
+  height: 2.75em !important;
+  object-fit: contain;
+}
+.navbar_left > h1 {
+  font-weight: bolder;
+  margin-top: 0 !important;
+  margin-left: 1.75rem !important;
+}
+.navbar_right {
+  display: flex !important;
+  flex: 0.15 !important;
+  margin-top: 10px;
+  justify-content: flex-end !important;
+  position: absolute;
+  right: 0;
+  top: 30px;
+  margin-top: -12px !important;
+}
+.nav_avatar {
+  /* margin-left: 20px; */
+  color: white;
+  font-size: 40px !important;
+
+  margin: auto 30px !important;
+  margin-top: -5% !important;
+}
+.grid {
+  font-size: 50px !important;
+  margin-top: -10% !important;
+  /* padding-left: 150px; */
+}
+@media screen and (max-width: 600px) {
+  .navbar {
+    height: 40px !important;
+  }
+  .navbar_left > img {
+    height: 1.75em !important;
+    object-fit: contain;
+  }
+  .navbar_left > h1 {
+    font-size: x-large;
+    margin-top: 0 !important;
+    margin-left: 1.5rem !important;
+  }
+  .navbar_right {
+    display: flex !important;
+    flex: 0.15 !important;
+
+    padding-left: 0px !important;
+    justify-content: flex-end !important;
+    position: absolute;
+    right: 0;
+    top: 30px;
+    margin-top: -15px !important;
+  }
+  .nav_avatar {
+    font-size: 25px !important;
+    /* margin-left: 20px; */
+    margin: auto 15px !important;
+    margin-top: -10% !important;
+  }
+  .grid {
+    font-size: 30px !important;
+    margin-top: -10% !important;
+    /* padding-left: 150px; */
+  }
+}
+
