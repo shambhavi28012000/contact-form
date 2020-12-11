@@ -12,7 +12,7 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state={
-           contact:[],
+           contact:'',
            COMPANY_NAME:'',
            SALUTATION: 'NA' ,
            name:'',
@@ -162,16 +162,6 @@ class App extends Component {
             mob_no1: event.target.value
         })
     }
-
-    
-   
-    handlePinChange = (event) => {
-    this.setState ({
-        pin: event.target.value
-    })
-}
-  
-  
   
    
    handleDirectnumberChange = (event) => {
@@ -330,7 +320,44 @@ handleCityChange = (event) => {
                RECRUITMENT CHOICES=${this.state.RECRUITMENT_CHOICES}`)
         
         axios.post('http://127.0.0.1:8000', {
-            COMPANY_NAME : this.state.COMPANY_NAME,
+                       COMPANY_NAME : this.state.COMPANY_NAME,
+                       SALUTATION: this.state.SALUTATION,
+                       name:this.state.name,
+                       referred_by:this.state.referred_by,
+                       designation:this.state.designation,
+                       department:this.state.department,
+                       email:this.state.email,
+                       email1:this.state.email1,
+                       mob_no_pin:this.state.mob_no_pin,
+                       mob_no:this.state.mob_no,
+                       mob_no1_pin:this.state.mob_no1_pin,
+                       mob_no1:this.state.mob_no1,
+                       remarks:this.state.remarks,
+                       directnumber:this.state.directnumber,
+                       remarks:this.state.remarks,
+                       institution:this.state.institution,
+                       institute_name:this.state.institute_name,
+                       stream:this.state.stream,
+                       selectschool:this.state.selectschool,
+                       y_of_p:this.state.y_of_p,
+                       degree:this.state.degree,
+                       month:this.state.month,
+                       year:this.state.year,
+                       LinkedIn:this.state.LinkedIn,
+                       Facebook:this.state.Facebook,
+                       Twitter:this.state.Twitter,
+                       OFFICE_DETAILS:this.state.OFFICE_DETAILS,
+                       boardlinepin:this.state.boardlinepin,
+                       Board_Line_Number:this.state.Board_Line_Number,
+                       boardlinepin1:this.state.boardlinepin1,
+                       Board_Line_Number1:this.state.Board_Line_Number1,
+                       Address:this.state.Address,
+                       Country:this.state.Country,
+                       City:this.state.Country,
+                       RECRUITMENT_CHOICES:this.state.RECRUITMENT_CHOICES,
+
+
+
         })
         .then(response => {
             console.log(response)
@@ -514,8 +541,8 @@ handleCityChange = (event) => {
 
 
                             {
-                                this.state.newemail?
-                                 <div>
+                                this.state.newemail ?
+                                <div>
                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <input className="company" type="text" value={this.state.email1}
                                 onChange={this.handleEmail1Change}/>
