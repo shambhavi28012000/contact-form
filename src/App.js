@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Navbar from './Navbar.js'
 import './App.css'
 import arrowmark from './back.png'
 import contact from './contact(1).png'
@@ -6,6 +7,8 @@ import add from './add.png'
 import fileimg from './fileimg.png'
 import axios from 'axios'
 import cross from './cross.png'
+import Footer from "./Footer";
+
 
 
 class App extends Component {
@@ -13,18 +16,18 @@ class App extends Component {
     super(props)
     this.state={
            contact:'',
-           COMPANY_NAME:'',
-           SALUTATION: 'NA' ,
-           name:'',
+           Co_name:'',
+           Salutation: 'NA' ,
+           Name:'',
            referred_by:'NA',
-           designation:'NA',
-           department:'',
-           email:'',
+           Designation:'NA',
+           Department:'',
+           Email:'',
            email1:'',
            mob_no:'',
            mob_no1:'',
            directnumber:'',
-           remarks:'',
+           Notes:'',
            COLLEGE_CHOICES:'',
            y_of_p:'',
            degree:'',
@@ -114,17 +117,17 @@ class App extends Component {
      
     handleCompanynameChange = (event) => {
         this.setState ({
-            COMPANY_NAME: event.target.value
+            Co_name: event.target.value
         })
     }
     handleSalutationChange = (event) => {
       this.setState({
-          SALUTATION: event.target.value
+          Salutation: event.target.value
       })
    }
    handleNameChange = (event) => {
        this.setState ({
-           name: event.target.value
+           Name: event.target.value
        })
    }
    handleReferredbyChange = (event) => {
@@ -134,12 +137,12 @@ class App extends Component {
     }
     handleDesignationChange = (event) => {
     this.setState({
-        designation: event.target.value
+        Designation: event.target.value
     })
     }
     handleEmailChange = (event) => {
     this.setState({
-        email: event.target.value
+        Email: event.target.value
     })
     }
     handleEmail1Change = (event) => {
@@ -149,7 +152,7 @@ class App extends Component {
         }
      handleDepartmentChange = (event) => {
        this.setState({
-           department: event.target.value
+           Department: event.target.value
        })
     }
     handleNumberChange = (event) => {
@@ -171,7 +174,7 @@ class App extends Component {
    }
    handleRemarksChange = (event) => {
        this.setState({
-           remarks: event.target.value
+           Notes: event.target.value
        })
    }
    handleInstitutionChange = (event) => {
@@ -289,18 +292,18 @@ handleCityChange = (event) => {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        alert(`COMAPNY NAME=${this.state.COMPANY_NAME}  
-               SALUTATION=${this.state.SALUTATION}    
-               NAME=${this.state.name}    
+        alert(`COMAPNY NAME=${this.state.Co_name}  
+               SALUTATION=${this.state.Salutation}    
+               NAME=${this.state.Name}    
                REFERRED BY=${this.state.referred_by}    
-               DESIGNATION=${this.state.designation}     
-               DEPARTMENT=${this.state.department}     
-               EMAIL=${this.state.email}
+               DESIGNATION=${this.state.Designation}     
+               DEPARTMENT=${this.state.Department}     
+               EMAIL=${this.state.Email}
                ALTERNATE EMAIL=${this.state.email1}    
                MOBILE NO=${this.state.mob_no_pin} ${this.state.mob_no}  
                ALTERNATE MOBILE NO=${this.state.mob_no1_pin} ${this.state.mob_no1}     
                DIRECT NUMBER=${this.state.directnumber}     
-               REMARKS=${this.state.remarks}   
+               REMARKS=${this.state.Notes}   
                INSTITUTION=${this.state.COLLEGE_CHOICES} 
                INSTITUTE=${this.state.institute_name}    
                YEAR OF PASSING=${this.state.y_of_p}     
@@ -319,26 +322,25 @@ handleCityChange = (event) => {
                CITY=${this.state.City}     
                RECRUITMENT CHOICES=${this.state.RECRUITMENT_CHOICES}`)
         
-        axios.post('http://127.0.0.1:8000', {
-                       COMPANY_NAME : this.state.COMPANY_NAME,
-                       SALUTATION: this.state.SALUTATION,
-                       name:this.state.name,
+        axios.post('http://127.0.0.1:8000/Contact_List/', {
+                       Co_name : this.state.COMPANY_NAME,
+                       Salutation: this.state.SALUTATION,
+                       Name:this.state.name,
                        referred_by:this.state.referred_by,
-                       designation:this.state.designation,
-                       department:this.state.department,
-                       email:this.state.email,
-                       email1:this.state.email1,
-                       mob_no_pin:this.state.mob_no_pin,
+                       Designation:this.state.designation,
+                       Department:this.state.department,
+                       Email:this.state.email,
+                      // email1:this.state.email1,
+                      // mob_no_pin:this.state.mob_no_pin,
                        mob_no:this.state.mob_no,
-                       mob_no1_pin:this.state.mob_no1_pin,
-                       mob_no1:this.state.mob_no1,
-                       remarks:this.state.remarks,
+                      //mob_no1_pin:this.state.mob_no1_pin,
+                       //mob_no1:this.state.mob_no1,
+                       Notes:this.state.remarks,
                        directnumber:this.state.directnumber,
-                       remarks:this.state.remarks,
-                       institution:this.state.institution,
-                       institute_name:this.state.institute_name,
-                       stream:this.state.stream,
-                       selectschool:this.state.selectschool,
+                      // institution:this.state.institution,
+                       //institute_name:this.state.institute_name,
+                     //  stream:this.state.stream,
+                      // selectschool:this.state.selectschool,
                        y_of_p:this.state.y_of_p,
                        degree:this.state.degree,
                        month:this.state.month,
@@ -347,14 +349,14 @@ handleCityChange = (event) => {
                        Facebook:this.state.Facebook,
                        Twitter:this.state.Twitter,
                        OFFICE_DETAILS:this.state.OFFICE_DETAILS,
-                       boardlinepin:this.state.boardlinepin,
+                      // boardlinepin:this.state.boardlinepin,
                        Board_Line_Number:this.state.Board_Line_Number,
-                       boardlinepin1:this.state.boardlinepin1,
-                       Board_Line_Number1:this.state.Board_Line_Number1,
+                      // boardlinepin1:this.state.boardlinepin1,
+                      // Board_Line_Number1:this.state.Board_Line_Number1,
                        Address:this.state.Address,
                        Country:this.state.Country,
                        City:this.state.Country,
-                       RECRUITMENT_CHOICES:this.state.RECRUITMENT_CHOICES,
+                      // RECRUITMENT_CHOICES:this.state.RECRUITMENT_CHOICES,
 
 
 
@@ -444,28 +446,23 @@ handleCityChange = (event) => {
         return (
     
             <div>  
+                 <Navbar name="ContactInfo"  Icon={contact} />
               <form onSubmit={this.handleSubmit}>
-                <nav className="navi"><img src={contact} alt="l" className="contact" />&nbsp;&nbsp;Contact Info <div className="rgt"> <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" className="bi bi-grid-3x3-gap-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2zM1 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V7zM1 12a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-2z"/>
-                </svg>&nbsp;&nbsp;&nbsp;<svg width="1.3em" height="1.3em" viewBox="0 0 16 16" className="bi bi-person-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
-                <path fillRule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                <path fillRule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
-                </svg></div>
-                </nav> 
+               
             
                 <div className="singlel"> 
-                    <img src={arrowmark} alt="l" className="contact" />
-            
-                    <select className="company1" value={this.state.COMPANY_NAME} onChange={this.handleCompanynameChange} >
-                    <option>NA</option>
-                    <option>TCS</option>
-                    <option>INFOSYS</option>
-                    <option>ACCENTURE</option>
-                    <option>AMAZON</option>
-                    <option>HIGHRADIUS</option>
-                    </select>
-            
+                    <img src={arrowmark} alt="l" className="contact" width="7em" height="7em" />
+                    
+    <select className="companyselect" value={this.state.companyname} onChange={this.handleCompanynameChange}>
+        <option>NA</option>
+        <option>TCS</option>
+        <option>INFOSYS</option>
+        <option>ACCENTURE</option>
+        <option>AMAZON</option>
+        <option>HIGHRADIUS</option>
+    </select>
+                    
+                    
                 <span style={{position: 'absolute', right: 0}} ><button className="butn" type="submit">Save</button></span>
             
                 </div>
@@ -493,8 +490,8 @@ handleCityChange = (event) => {
                         <div className="formone">
                             <div className="formtitle">Personal information</div>
                             
-                            <label>Salutation<span className="redv">*</span></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <select className="company" value={this.state.SALUTATION} onChange={this.handleSalutationChange}>
+                            <label>Salutation<span className="redv">*</span></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <select className="companydrop" value={this.state.SALUTATION} onChange={this.handleSalutationChange}>
                             <option value="NA">NA</option>
                             <option value="Colonel">Colonel</option>
                             <option value="Dr.">Dr.</option>
@@ -503,20 +500,20 @@ handleCityChange = (event) => {
                             </select>
                             <br></br>
             
-                            <label>Name<span className="redv">*</span></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label>Name<span className="redv">*</span></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <input className="company" type="text" value={this.state.name}
                             onChange={this.handleNameChange}/><br></br>
             
-                            <label> Referred By</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <select className="company" value={this.state.referred_by} onChange={this.handleReferredbyChange}>
+                            <label> Referred By</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <select className="companydrop" value={this.state.referred_by} onChange={this.handleReferredbyChange}>
                             <option value="NA">NA</option>
                             <option value="Mr.A">Mr.A</option>
                             <option value="Mr.B">Mr.B</option>
                             <option value="Mr.C">Mr.C</option> 
                             </select><br></br>
             
-                            <label> Designation</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <select className="company" value={this.state.designation} onChange={this.handleDesignationChange}>
+                            <label> Designation</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <select className="companydrop" value={this.state.designation} onChange={this.handleDesignationChange}>
                             <option value="NA">NA</option>
                             <option value="HR">HR</option>
                             <option value="Finance">Finance</option>
@@ -527,10 +524,9 @@ handleCityChange = (event) => {
                             <option value="Marketing">Marketing</option>
                             <option value="Technical">Technical</option>
                             <option value="Purchase">Purchase</option>
-                            <option value="Others">Others</option>
-                            </select><br></br>
+                         </select><br></br>
             
-                            <label>Department</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label>Department</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <input className="company" type="text" value={this.state.department}
                             onChange={this.handleDepartmentChange}/><br></br>
             
@@ -543,7 +539,7 @@ handleCityChange = (event) => {
                             {
                                 this.state.newemail ?
                                 <div>
-                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <input className="company" type="text" value={this.state.email1}
                                 onChange={this.handleEmail1Change}/>
                                  <img src={cross} alt="addfield" height="15" width="15" onClick={()=>this.removeemailid()}></img>
@@ -560,7 +556,7 @@ handleCityChange = (event) => {
                            { 
                            this.state.newmobno?
                             <div >
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <input className="company3" type="text" value={this.state.mob_no1_pin}
                             onChange={this.handleNumber1pinChange}></input>
                             <input className="company2" type="text" value={this.state.mob_no1}
@@ -575,7 +571,7 @@ handleCityChange = (event) => {
                             
             
             
-                            <label>Remarks</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label>Remarks</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <textarea className="broadinput" value={this.state.remarks} onChange={this.handleRemarksChange}></textarea>  
                         </div>   
                     </div>  
@@ -592,31 +588,29 @@ handleCityChange = (event) => {
             <div className="formone">
                 <div className="formtitle">Pedigree</div>
                 
-                <div><label> Institution</label>&nbsp; &nbsp;
+                <div><label> Institution</label>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
                 <span className="ri"> <input type="radio" value="KIIT" name="COLLEGE_CHOICES" onChange={this.handleInstitutionChange} className="inp"  onClick={()=>this.operation()} ></input>KIIT &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
                 <input type="radio" value="Others" name="COLLEGE_CHOICES" onChange={this.handleInstitutionChange} className="inp" onClick={()=>this.operationone()} ></input>others
-                <br></br></span></div><br/>
+                <br></br></span></div>
 
 
              {
              this.state.showMe ?
              <div>
-             <label>Select School</label>&nbsp;
-             <select className="company" value={this.state.selectschool} onChange={this.handleSchoolChange}>
+             <label>Select School</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <select className="companydrop" value={this.state.selectschool} onChange={this.handleSchoolChange}>
              <option value="NA">NA</option>
              <option value="School 1">School 1</option>
              <option value="School 2">School 2</option>
              <option value="School 3">School 3</option>
-             <option value="School 4">School 4</option>
              </select><br></br>
 
-             <label>Stream</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-             <select className="company" value={this.state.stream} onChange={this.handleStreamChange}>
+             <label>Stream</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <select className="companydrop" value={this.state.stream} onChange={this.handleStreamChange}>
              <option value="NA">NA</option>
              <option value="Stream 1.1">Stream1.1</option>
              <option value="Stream 1.2">Stream 1.2</option>
              <option value="Stream 1.3">Stream 1.3</option>
-             <option value="Stream 1.4">Stream 1.4</option>
              </select><br></br>
              </div>
              :null
@@ -624,7 +618,7 @@ handleCityChange = (event) => {
 
             {this.state.visible ?
             <div>
-            <label>Institute Name</label>&nbsp;
+            <label>Institute Name</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input className="company" type="text" value={this.state.institute_name}
              onChange={this.handleInstituteChange}/><br></br>
             </div>
@@ -633,11 +627,11 @@ handleCityChange = (event) => {
             
     
            
-                            <label>Year of Passing</label>&nbsp;
+                            <label>Year of Passing</label>&nbsp;&nbsp;&nbsp;&nbsp;
                             <input className="company" type="text" value={this.state.y_of_p}
                             onChange={this.handleYearofpassingChange}/><br></br>
             
-                            <label> Degree</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label> Degree</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <input className="company" type="text" value={this.state.degree}
                             onChange={this.handleDegreeChange}/>
                             <br></br>
@@ -659,7 +653,7 @@ handleCityChange = (event) => {
                             <option value="December">December</option>
                             
                             </select>
-                            <select className="workingsince" value={this.state.year} onChange={this.handleYearChange}>
+                            <select className="workingsince1" value={this.state.year} onChange={this.handleYearChange}>
                             <option value="Year">Year</option>
                             <option value="2001">2001</option>
                             <option value="2002">2002</option>
@@ -684,16 +678,17 @@ handleCityChange = (event) => {
                             </select>  <br></br><br></br>
             
                             
-                            <div className="formtitle">Social media Links</div>  
-                            <label> Linkdln&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                            <div className="formtitle">Social media Links</div> 
+                            <br></br> 
+                            <label> Linkdln&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                             <input className="company" type="text" value={this.state.LinkedIn}
                             onChange={this.handleLinkdlnChange}/><br/>
                             
-                            <label> Facebook</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label> Facebook</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <input className="company" type="text" value={this.state.Facebook}
                             onChange={this.handleFacebookChange}/><br/>
             
-                            <label>Twitter</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label>Twitter</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <input className="company" type="text" value={this.state.Twitter}
                             onChange={this.handleTwitterChange}/><br></br>
             
@@ -723,8 +718,8 @@ handleCityChange = (event) => {
                             <div className="formtitle">Office Details</div>
                         
                  
-                <label>Office Type</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <select className="company" value={this.state.OFFICE_DETAILS} onChange={this.handleOfficetypeChange}>
+                <label>Office Type</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <select className="companyoffice" value={this.state.OFFICE_DETAILS} onChange={this.handleOfficetypeChange}>
                 <option value="NA">NA</option>
                 <option value="Head Office">Head Office</option>
                 <option value="Factory / Plant">Factory / Plant</option>
@@ -734,13 +729,13 @@ handleCityChange = (event) => {
                 <option value="Registered Office">Registered Office</option>
                 <option value="Zonal Office">Zonal Office</option>
                 </select>
-                <img src={fileimg} alt="addfield" height="15" width="15" ></img>
+                <img src={fileimg} alt="addfield" height="20" width="20" className="officeimg" ></img>
                 <br></br>
 
                          
             
                             
-                <label>Board Line Number</label>               
+                <label>Board Line Number</label>&nbsp;&nbsp;               
                 <input  type="text"  className="company5" value={this.state.boardlinepin}
                 onChange={this.handleBoardlinepinChange}/>
                 <input  type="text"  className="company4" value={this.state.Board_Line_Number}
@@ -751,7 +746,7 @@ handleCityChange = (event) => {
                 
             {  this.state.newboardline?
                 <div>
-                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <input  type="text"  className="company5" value={this.state.boardlinepin1}
                 onChange={this.handleBoardlinepin1Change}/>
                 <input  type="text"  className="company4" value={this.state.Board_Line_Number1}
@@ -759,14 +754,14 @@ handleCityChange = (event) => {
                   <img src={cross} alt="addfield" height="15" width="15" onClick={()=>this.removeboardline()}></img><br></br><br/>
                 </div>:null
             }
-                <label>Address</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <label>Address</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <textarea className="broadinput" value={this.state.Address} onChange={this.handleAddressChange}></textarea> <br></br>
 
-                <label>Country</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <label>Country</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <input className="company" type="text" value={this.state.Country}
                 onChange={this.handleCountryChange}/><br></br> 
                
-                <label>City</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <label>City</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <input className="company" type="text" value={this.state.City}
                 onChange={this.handleCityChange}/><br></br> <br></br><br></br>
                
@@ -782,9 +777,11 @@ handleCityChange = (event) => {
             
                 </div>
              
-            </form>  
+            </form> 
+            <Footer /> 
             
             </div>
+
             
              
           );
